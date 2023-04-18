@@ -28,4 +28,8 @@ return {
     "justinmk/vim-sneak",
     event = "User AstroFile",
   },
+  {
+    "mg979/vim-visual-multi",
+    event = "User AstroFile",
+  },
 }
