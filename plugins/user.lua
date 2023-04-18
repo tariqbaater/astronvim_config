@@ -18,8 +18,14 @@ return {
       vim.keymap.set("i", "<c-,>", function() return vim.fn["codeium#CycleCompletions"](-1) end, { expr = true })
       vim.keymap.set("i", "<c-x>", function() return vim.fn["codeium#Clear"]() end, { expr = true })
     end,
+    event = "User AstroFile",
   },
   {
     "kylechui/nvim-surround",
+    event = "User AstroFile",
+  },
+  {
+    "justinmk/vim-sneak",
+    event = "User AstroFile",
   },
 }
