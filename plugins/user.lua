@@ -41,4 +41,16 @@ return {
   {
     "ThePrimeagen/vim-be-good",
   },
+  {
+    "folke/todo-comments.nvim",
+    event = "VeryLazy",
+    requires = "nvim-lua/plenary.nvim",
+    config = function()
+      require("todo-comments").setup {
+        -- your configuration comes here
+        --  or leave it empty to use the default settings
+        --  (https://github.com/folke/todo-comments.nvim/blob/main/doc/todo-comments.txt)
+      }
+    end,
+  },
 }
