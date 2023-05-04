@@ -50,6 +50,12 @@ return {
         -- your configuration comes here
         --  or leave it empty to use the default settings
         --  (https://github.com/folke/todo-comments.nvim/blob/main/doc/todo-comments.txt)
+        keywords = {
+          Youtube = { icon = "", color = "#ff5555" },
+          Github = { icon = "", color = "#0000ff" },
+          Gitlab = { icon = "", color = "#50fa7b" },
+          URL = { icon = "", color = "#7711ff" },
+        },
       }
     end,
   },
