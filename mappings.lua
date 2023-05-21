@@ -23,7 +23,7 @@ return {
     -- quick save
     -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
     -- run python file
-    ["<leader>r"] = { ":w<CR>:vsp |terminal python3 %<CR>i", desc = "Run Python File" },
+    ["<leader>r"] = { ":w<CR>:sp |terminal python3 %<CR>i", desc = "Run Python File" },
   },
   t = {
     -- setting a mapping to false will disable it
