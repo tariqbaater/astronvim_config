@@ -59,4 +59,31 @@ return {
       }
     end,
   },
+  {
+    "L3MON4D3/LuaSnip",
+    config = function(plugin, opts)
+      require "plugins.configs.luasnip"(plugin, opts) -- include the default astronvim config that calls the setup call
+      require("luasnip.loaders.from_vscode").lazy_load { paths = { "~/.config/nvim/snippets" } } -- load snippets paths
+    end,
+  },
+  {
+    "hrsh7th/nvim-cmp",
+    event = "User AstroFile",
+  },
+  {
+    "hrsh7th/cmp-nvim-lsp",
+    event = "User AstroFile",
+  },
+  {
+    "Pocco81/auto-save.nvim",
+    event = "User AstroFile",
+    config = function()
+      require("auto-save").setup {
+        enabled = true,
+        execution_message = {
+          message = "Auto Save",
+        },
+      }
+    end,
+  },
 }
