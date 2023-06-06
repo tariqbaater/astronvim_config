@@ -86,4 +86,13 @@ return {
       }
     end,
   },
+  {
+    "mattn/emmet-vim",
+    event = "User AstroFile",
+  },
+  {
+    "catpuccin/nvim",
+    name = "catpuccin",
+    config = function() require("catppuccin").setup {} end,
+  },
 }
