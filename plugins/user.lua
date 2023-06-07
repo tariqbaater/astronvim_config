@@ -62,7 +62,7 @@ return {
   {
     "L3MON4D3/LuaSnip",
     config = function(plugin, opts)
-      require "plugins.configs.luasnip"(plugin, opts) -- include the default astronvim config that calls the setup call
+      require "plugins.configs.luasnip" (plugin, opts)                                           -- include the default astronvim config that calls the setup call
       require("luasnip.loaders.from_vscode").lazy_load { paths = { "~/.config/nvim/snippets" } } -- load snippets paths
     end,
   },
@@ -91,8 +91,24 @@ return {
     event = "User AstroFile",
   },
   {
-    "catpuccin/nvim",
-    name = "catpuccin",
-    config = function() require("catppuccin").setup {} end,
+    "folke/tokyonight.nvim",
+    lazy = false,
+    priority = 1000,
+    opts = {},
+  },
+  {
+    "linux-cultist/venv-selector.nvim",
+    dependencies = { "neovim/nvim-lspconfig", "nvim-telescope/telescope.nvim" },
+    config = true,
+    event = "VeryLazy", -- Optional: needed only if you want to type `:VenvSelect` without a keymapping
+    keys = {
+      {
+        "<leader>vs",
+        "<cmd>:VenvSelect<cr>",
+        -- key mapping for directly retrieve from cache. You may set autocmd if you prefer the no hand approach
+        "<leader>vs",
+        "<cmd>:VenvSelectCached<cr>",
+      },
+    },
   },
 }
