@@ -66,14 +66,14 @@ return {
       require("luasnip.loaders.from_vscode").lazy_load { paths = { "~/.config/nvim/snippets" } } -- load snippets paths
     end,
   },
-  {
-    "hrsh7th/nvim-cmp",
-    event = "User AstroFile",
-  },
-  {
-    "hrsh7th/cmp-nvim-lsp",
-    event = "User AstroFile",
-  },
+  -- {
+  --   "hrsh7th/nvim-cmp",
+  --   event = "User AstroFile",
+  -- },
+  -- {
+  --   "hrsh7th/cmp-nvim-lsp",
+  --   event = "User AstroFile",
+  -- },
   {
     "Pocco81/auto-save.nvim",
     event = "User AstroFile",
