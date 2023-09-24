@@ -42,6 +42,7 @@ return {
           "javascript",
           "javascriptreact",
           "html",
+          "sql",
         },
         ignore_filetypes = { -- disable format on save for specified filetypes
           -- "python",
@@ -57,7 +58,7 @@ return {
     },
     -- enable servers that you already have installed without mason
     servers = {
-      -- "pyright"
+      -- "black",
     },
   },
   -- Configure require("lazy").setup() options
