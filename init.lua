@@ -43,6 +43,7 @@ return {
           "javascriptreact",
           "html",
           "sql",
+          "mysql",
         },
         ignore_filetypes = { -- disable format on save for specified filetypes
           -- "python",

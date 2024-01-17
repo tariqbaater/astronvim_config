@@ -10,6 +10,56 @@ return {
   --   end,
   -- },
   {
+    "deepskyblue86/bard-nvim",
+    lazy = false,
+    config = function()
+      require('bard').setup({bardcli_path="/opt/homebrew/bin/bard-cli", bardcli_config_path="$HOME/.bardcli.yaml"})
+    end
+  },
+  {
+    "diepm/vim-rest-console",
+    lazy = false,
+    -- config = function()
+    --   require("rest-nvim").setup()
+    -- end,
+  },
+  {
+    "sourcegraph/sg.nvim",
+    dependencies = { "nvim-lua/plenary.nvim", --[[ "nvim-telescope/telescope.nvim ]] },
+    -- If you have a recent version of lazy.nvim, you don't need to add this!
+    build = "nvim -l build/init.lua",
+    lazy = false,
+  },
+  {
+    "tpope/vim-dadbod",
+    lazy = false,
+  },
+  {
+    "kristijanhusak/vim-dadbod-ui",
+    dependencies = {
+    { 'tpope/vim-dadbod', lazy = true },
+    -- { 'kristijanhusak/vim-dadbod-completion', ft = { 'sql', 'mysql', 'plsql' }, lazy = true },
+  },
+  cmd = {
+    'DBUI',
+    'DBUIToggle',
+    'DBUIAddConnection',
+    'DBUIFindBuffer',
+    'DBRowsCount',
+  },
+  init = function()
+    -- Your DBUI configuration
+    vim.g.db_ui_use_nerd_fonts = 1
+    vim.g.db_ui_show_row_count = 1
+    vim.g.db_ui_row_count_format = ' '
+  end,
+  },
+  {
+    "kristijanhusak/vim-dadbod-completion",
+    lazy = false,
+
+  },
+  {
     "Exafunction/codeium.vim",
     config = function()
       -- Change '<C-g>' here to any keycode you like.
@@ -66,26 +116,26 @@ return {
       require("luasnip.loaders.from_vscode").lazy_load { paths = { "~/.config/nvim/snippets" } } -- load snippets paths
     end,
   },
-  -- {
-  --   "hrsh7th/nvim-cmp",
-  --   event = "User AstroFile",
-  -- },
-  -- {
-  --   "hrsh7th/cmp-nvim-lsp",
-  --   event = "User AstroFile",
-  -- },
   {
-    "Pocco81/auto-save.nvim",
+    "hrsh7th/nvim-cmp",
     event = "User AstroFile",
-    config = function()
-      require("auto-save").setup {
-        enabled = true,
-        execution_message = {
-          message = "Auto Save",
-        },
-      }
-    end,
   },
+  {
+    "hrsh7th/cmp-nvim-lsp",
+    event = "User AstroFile",
+  },
+  -- {
+  --   "Pocco81/auto-save.nvim",
+  --   event = "User AstroFile",
+  --   config = function()
+  --     require("auto-save").setup {
+  --       enabled = true,
+  --       execution_message = {
+  --         message = "Auto Save",
+  --       },
+  --     }
+  --   end,
+  -- },
   {
     "mattn/emmet-vim",
     event = "User AstroFile",
