@@ -11,6 +11,9 @@ return {
   --   end,
   -- },
   {
+    "jesseleite/nvim-macroni",
+  },
+  {
     "deepskyblue86/bard-nvim",
     lazy = false,
     config = function()

@@ -38,9 +38,23 @@ return {
     ["<leader>q"] = { ":%!sqlformat --reindent --keywords upper --identifiers lower - <CR>", desc = "Format SQL" },
     -- for deploying DBUI
     ["<leader>d"] = { ":DBUIToggle<CR>", desc = "Deploy DBUI" },
+    -- -- binding for macro
+    -- ["<leader>T"] = { "^f,<t_˝a>a<BS><CR>jk@q", desc = "Unlisting Macro" },
+    -- ["<leader>L"] = { "A,<Space>jkJ@W", desc = "Listing Macro" },
+    -- keep the cursor in place while joining lines
+    ["J"] = { "mzJ`z", desc = "Keep cursor in place while joining lines" },
+    -- edit alternate file
+    ["<leader>a"] = { "<C-^>", desc = "Edit alternate file" },
   },
   t = {
     -- setting a mapping to false will disable it
     -- ["<esc>"] = false,
+  },
+  x = {
+    -- move selected line
+    ["J"] = { ":m '>+1<CR>gv=gv", desc = "Move line up" },
+    ["K"] = { ":m '<-2<CR>gv=gv", desc = "Move line down" },
+    -- escape visual mode
+    ["kk"] = { "<esc>", desc = "Escape visual mode" },
   },
 }
