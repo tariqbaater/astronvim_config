@@ -1,31 +1,6 @@
 return {
-  -- You can also add new plugins here as well:
-  -- Add LazyVim and all your plugins
-  -- Add plugins, the lazy syntax
-  -- "andweeb/presence.nvim",
-  -- {
-  --   "ray-x/lsp_signature.nvim",
-  --   event = "BufRead",
-  --   config = function()
-  --     require("lsp_signature").setup()
-  --   end,
-  -- },
   {
     "jesseleite/nvim-macroni",
-  },
-  {
-    "deepskyblue86/bard-nvim",
-    lazy = false,
-    config = function()
-      require("bard").setup { bardcli_path = "/opt/homebrew/bin/bard-cli", bardcli_config_path = "$HOME/.bardcli.yaml" }
-    end,
-  },
-  {
-    "diepm/vim-rest-console",
-    lazy = false,
-    -- config = function()
-    --   require("rest-nvim").setup()
-    -- end,
   },
   {
     "sourcegraph/sg.nvim",
@@ -44,7 +19,7 @@ return {
     "kristijanhusak/vim-dadbod-ui",
     dependencies = {
       { "tpope/vim-dadbod", lazy = true },
-      -- { 'kristijanhusak/vim-dadbod-completion', ft = { 'sql', 'mysql', 'plsql' }, lazy = true },
+      { "kristijanhusak/vim-dadbod-completion", ft = { "sql", "mysql", "plsql" }, lazy = true },
     },
     cmd = {
       "DBUI",
@@ -151,21 +126,6 @@ return {
     lazy = false,
     priority = 1000,
     opts = {},
-  },
-  {
-    "linux-cultist/venv-selector.nvim",
-    dependencies = { "neovim/nvim-lspconfig", "nvim-telescope/telescope.nvim" },
-    config = true,
-    event = "VeryLazy", -- Optional: needed only if you want to type `:VenvSelect` without a keymapping
-    keys = {
-      {
-        "<leader>vs",
-        "<cmd>:VenvSelect<cr>",
-        -- key mapping for directly retrieve from cache. You may set autocmd if you prefer the no hand approach
-        "<leader>vs",
-        "<cmd>:VenvSelectCached<cr>",
-      },
-    },
   },
   {
     "catppuccin/nvim",
